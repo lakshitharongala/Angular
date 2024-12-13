@@ -1,0 +1,29 @@
+<button class="btn btn-primary">login</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">last</th>
+        <th scope="col">Handle</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let d of details">
+        <th scope="row">{{d.id}}</th>
+        <td>{{d.name}}</td>
+        <td>{{d.title}}</td>
+        
+        <td>
+            <td>{{d.description}}
+
+            </td>
+            <img [src]="d.src" [alt]="d.alt">
+            <button class="btn btn-warning">edit</button>
+            <button class="btn btn-danger" (click)="delete(d.id)">delete</button>
+        
+      </tr>
+      
+    </tbody>
+  </table>
