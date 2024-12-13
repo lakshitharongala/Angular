@@ -7,7 +7,7 @@ import { Travel } from '../models/travel';
   providedIn: 'root'
 })
 export class TravelService {
-  private baseUrl="";
+  private baseUrl="https://sheetdb.io/api/v1/arue8f82xlck7";
   constructor(private http:HttpClient) { }
   getall():Observable<any[]>{ 
     return this.http.get<any[]>(`${this.baseUrl}`)
@@ -23,5 +23,9 @@ export class TravelService {
   }
   update(id:number,records:Travel):Observable<any>{
     return this.http.put<any>(`${this.baseUrl}/id=${id}`,records);
+  }
+  searchbyemail(email:string):Observable<any[]>{
+    return this.http.get<any[]>(`${this.baseUrl}/searchbyemail?=$email`);
+
   }
 }
